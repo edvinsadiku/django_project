@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Document List</h1>
+  <ul>
+    {% for document in documents %}
+      <li>
+        <a href="{{ document.file.url }}">
+          {{ document.title }}
+          <i class="fas fa-download"></i>
+        </a>
+      </li>
+    {% empty %}
+      <li>No documents found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+

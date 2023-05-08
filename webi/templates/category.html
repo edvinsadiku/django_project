@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ category.lajmet }}</h1>
+  <ul>
+    {% for postimet in object_list %}
+      <div class="lajmi">
+        <li><a href="{% url 'postimet' postimet.pk %}">{{ postimet.title }}</a>
+          {{ postimet.author }}
+          <br>{{ postimet.body|safe|truncatechars:50 }}</li>
+      </div>
+    {% endfor %}
+  </ul>
+{% endblock %}

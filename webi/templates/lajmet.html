@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lajmet</title>
+    {% extends 'base.html' %}
+    {% block content %}
+    <img src="{{ postimet.image.url }}"/>
+
+
+    <h1>{{ postimet.title }}</h1>
+    <small><b>Data e publikimit:</b> {{ postimet.pub_date }}</small>
+    <small><b>Autori:</b> {{ postimet.author }}</small><br>
+    <br>{{ postimet.body|safe }}
+    <br>
+    <a href="{% url 'home' %}" >BACK</a>
+
+    {% endblock %}
+</head>
+<body>
+
+</body>
+</html>
